@@ -1,6 +1,6 @@
 {
-  "name": "defaults",
-  "version": "0.1.0",
+  "name": "justdoit",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
