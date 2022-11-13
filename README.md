@@ -11,4 +11,4 @@ I will create a ToDo list customized for my daily tasks and more.
 
 ## Current Version
 
-0.0.1 - Init commit and first steps
+0.0.1 - Building infra and github actions
