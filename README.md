@@ -1,6 +1,6 @@
 # Just Do It
 
-I will create a ToDo list customized for my daily tasks and more.
+I will create my own website with a lot of features.
 
 ## What I want to use?
 
