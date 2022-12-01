@@ -2,9 +2,9 @@ name: Deploy using Github Action
 
 on:
   push:
-    branches: ["master"]
+    branches: [master, develop, develop/**, feature/**, bugfix/**]
   pull_request:
-    branches: ["master"]
+    branches: [master, develop, feature/**, bugfix/**]
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm test
+      - run: npm run test
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
