@@ -2,9 +2,9 @@ name: Deploy using Github Action
 
 on:
   push:
-    branches: ["master"]
+    branches: [master, develop, develop/**, feature/**, bugfix/**]
   pull_request:
-    branches: ["master"]
+    branches: [master, develop, feature/**, bugfix/**]
 
 jobs:
   build:
