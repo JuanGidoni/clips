@@ -1,11 +1,13 @@
-import { Button } from "./Atoms";
-import { GlobalProvider } from "./Contexts";
+import { GlobalProvider, AuthProvider } from "./Contexts";
+import { BasicTemplate } from "./Templates";
 
 const Components = () => {
   return (
-    <GlobalProvider>
-      Example Button: <Button />
-    </GlobalProvider>
+    <BasicTemplate>
+      <GlobalProvider>
+        <AuthProvider>In progress...</AuthProvider>
+      </GlobalProvider>
+    </BasicTemplate>
   );
 };
 
