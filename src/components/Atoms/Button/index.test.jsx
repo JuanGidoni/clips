@@ -1,11 +1,10 @@
-import { fireEvent, render } from "@testing-library/react";
-import { act } from "react-dom/test-utils";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { Button } from "./index";
 
 describe("<Button /> testing suits", () => {
   const mockClick = jest.fn();
   test("check button snapshot", () => {
-    const TestButton = render(
+    const { container } = render(
       <Button
         text="Testing"
         click={mockClick}
@@ -13,10 +12,10 @@ describe("<Button /> testing suits", () => {
         testId="buttonTest"
       />
     );
-    expect(TestButton).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
   test("should render with props", () => {
-    const { getByTestId } = render(
+    render(
       <Button
         text="Testing"
         click={mockClick}
@@ -24,14 +23,12 @@ describe("<Button /> testing suits", () => {
         testId="buttonTest"
       />
     );
-    const TestButton = getByTestId("buttonTest");
-    act(() => {
-      fireEvent.click(TestButton);
-    });
+    const button = screen.getByTestId("buttonTest");
+    fireEvent.click(button);
     expect(mockClick).toHaveBeenCalledTimes(1);
-    expect(TestButton.innerHTML).toBe("Testing");
-    expect(TestButton).toHaveClass("btn");
-    expect(TestButton).toHaveAttribute("data-testid", "buttonTest");
-    expect(TestButton).toBeInTheDocument();
+    expect(button.innerHTML).toBe("Testing");
+    expect(button).toHaveClass("btn");
+    expect(button).toHaveAttribute("data-testid", "buttonTest");
+    expect(button).toBeInTheDocument();
   });
 });

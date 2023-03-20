@@ -5,7 +5,7 @@
 // Since I will use Github pages... I will be showing local data.
 // Firebase or Mongo are both useless in this case
 // and I don't want to spent time on configuring that xd
-const config = {
+export const config = {
   personalInfo: {
     fullName: "Juan Ignacio Gidoni",
     firstName: "Juan",
