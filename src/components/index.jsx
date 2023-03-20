@@ -1,11 +1,14 @@
-import { GlobalProvider, AuthProvider } from "./Contexts";
+import { RouterProvider } from "react-router-dom";
+import { GlobalProvider } from "./Contexts";
 import { BasicTemplate } from "./Templates";
+import { router } from "./Utils/Routes";
 
 const Components = () => {
   return (
     <BasicTemplate>
       <GlobalProvider>
-        <AuthProvider>In progress...</AuthProvider>
+        {/* <App /> */}
+        <RouterProvider router={router} />
       </GlobalProvider>
     </BasicTemplate>
   );

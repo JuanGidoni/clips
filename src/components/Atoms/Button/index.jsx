@@ -1,11 +1,9 @@
 import "./index.css";
 
-const Button = ({ text, className, click }) => {
+export const Button = ({ text, className, click, testId }) => {
   return (
-    <button className={className} onClick={click}>
+    <button className={className} onClick={click} data-testid={testId}>
       {text}
     </button>
   );
 };
-
-export default Button;

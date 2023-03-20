@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "../../Atoms";
 
-const Login = () => {
+export const Login = () => {
   const [test, setTest] = useState("Login with Github");
   const [test2, setTest2] = useState(1);
   const testing = (x) => {
@@ -13,5 +13,3 @@ const Login = () => {
     <Button text={test} className="btn github" click={() => testing(test2)} />
   );
 };
-
-export default Login;

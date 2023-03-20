@@ -1,3 +1,2 @@
-import GlobalProvider from "./GlobalContext";
-import AuthProvider from "./AuthContext";
-export { GlobalProvider, AuthProvider };
+import { GlobalProvider } from "./GlobalContext";
+export { GlobalProvider };

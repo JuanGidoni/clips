@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect, createContext, useMemo } from "react";
+import { initialState } from "../../Utils/State";
 
 const CreateGlobalContext = createContext();
 
@@ -6,15 +7,16 @@ export const useDataContext = () => {
   return useContext(CreateGlobalContext);
 };
 
-const GlobalProvider = ({ children, ...props }) => {
+export const GlobalProvider = ({ children, ...props }) => {
   const [loading, setLoading] = useState(true);
   const value = useMemo(() => {
     return {
-      initialState: ["test", "123"],
+      initialState,
     };
   }, []);
   useEffect(() => {
-    if (value?.initialState.length > 0) {
+    if (value?.initialState) {
+      // fake loading
       setTimeout(() => {
         setLoading(false);
       }, 1500);
@@ -27,5 +29,3 @@ const GlobalProvider = ({ children, ...props }) => {
     </CreateGlobalContext.Provider>
   );
 };
-
-export default GlobalProvider;
